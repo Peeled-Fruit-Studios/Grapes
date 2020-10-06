@@ -1,6 +1,0 @@
-Copyright 2020 Peeled Fruit Studios, All RIghts Reserved.
-
-Code can be copied as long as you note Peeled Fruit Studios.
-
-The SVM cannot be modified, copied, or distributed alone without explicit permission from Peeled Fruit Studios
-
