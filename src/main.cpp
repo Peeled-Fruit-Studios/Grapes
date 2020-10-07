@@ -1,9 +1,10 @@
 #include <iostream>
 #include "GrapesConf.h"
-#include "Scanner.h"
+#include "Program.h"
+#include "Value.h"
 #include "Parser.h"
 
-int main() {
+void preamble() {
   std::cout << "Grapes v" << GRAPES_VERSION_MAJOR << "." << GRAPES_VERSION_MINOR << ", Copyright 2020 Peeled Fruit Studios. All Rights Reserved.\n";
 
   #ifdef BUILD_INSTALLER
@@ -16,10 +17,13 @@ int main() {
   std::cout << "Operating System: " << CMAKE_SYSTEM << std::endl;
 
   std::cout << "CPU Arch: " << CMAKE_SYSTEM_PROCESSOR << std::endl;
+}
 
+int main() {
+  preamble();
+/*
   Grapes::Scanner sc;
   sc.setup("test/Test.gs");
-
   std::cout << "Testing Complete Scanner\n";
   std::list<Grapes::Token> gh;
   gh  = sc.ScanTokens();
@@ -35,12 +39,12 @@ int main() {
       std::string hl = item->start;
       std::cout << hl.substr(0, item->length) << " | " << item->line << std::endl;
     }
-  }
-
-  std::cout << "Testing Parser\n";
+  } */
 
   Grapes::Parser ps("test/Test.gs");
 
-  ps.parse();
+  Grapes::Program pt = ps.parse();
+
+  pt.print();
   
 }

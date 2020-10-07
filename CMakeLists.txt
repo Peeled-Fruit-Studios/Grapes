@@ -1,18 +1,25 @@
+set(CMAKE_C_COMPILER clang)
+set(CMAKE_CXX_COMPILER clang++)
+
 cmake_minimum_required(VERSION 3.10)
 
-project(Grapes VERSION 1.2)
+project(Grapes VERSION 1.4)
 
 option(BUILD_INSTALLER "Make Installer for Grapes" OFF)
+option(DYNA_SVM "Make the SVM a Dynamic Library" ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 
 add_subdirectory(src)
 add_subdirectory(include)
+add_subdirectory(svm)
 
 configure_file(include/GrapesConf.h.in GrapesConf.h)
 
 target_include_directories(Grapes PUBLIC "${PROJECT_BINARY_DIR}/include")
+
+target_include_directories(Grapes PUBLIC "${PROJECT_SOURCE_DIR}/svm/include")
 
 if(BUILD_INSTALLER)
 

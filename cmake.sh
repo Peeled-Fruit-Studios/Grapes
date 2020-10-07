@@ -8,12 +8,10 @@ cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Debug ..
 
 mv GrapesConf.h ../include
 
-ninja
+ninja -j 8
 
 mv src/Grapes ..
 
 rm ../include/GrapesConf.h
 
 cd ..
-
-rm -r build
