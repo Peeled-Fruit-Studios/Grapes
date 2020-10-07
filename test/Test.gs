@@ -1,4 +1,1 @@
-fun hello(x, y) {
-  print "Hello " + x;
-  print "Hello " + y;
-}
+print 5 + 5 * 5;

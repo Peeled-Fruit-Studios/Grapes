@@ -1,6 +1,7 @@
 #include <iostream>
 #include "GrapesConf.h"
 #include "Scanner.h"
+#include "Parser.h"
 
 int main() {
   std::cout << "Grapes v" << GRAPES_VERSION_MAJOR << "." << GRAPES_VERSION_MINOR << ", Copyright 2020 Peeled Fruit Studios. All Rights Reserved.\n";
@@ -19,7 +20,7 @@ int main() {
   Grapes::Scanner sc;
   sc.setup("test/Test.gs");
 
-  std::cout << "Testing new scanner function\n";
+  std::cout << "Testing Complete Scanner\n";
   std::list<Grapes::Token> gh;
   gh  = sc.ScanTokens();
 
@@ -36,4 +37,10 @@ int main() {
     }
   }
 
+  std::cout << "Testing Parser\n";
+
+  Grapes::Parser ps("test/Test.gs");
+
+  ps.parse();
+  
 }
