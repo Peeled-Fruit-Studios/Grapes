@@ -24,15 +24,18 @@ void Parser::advance() {
 void Parser::statement() {
   if (curtok.type == PRINT) {
     advance();
-    exp();
+    exp(SEMICOLON);
     std::cout << "PRINT\n";
     advance();
   } else {
-    std::cout << "Error: Unexpected Start of Program\n";
+    error("Invalid Start of Program");
   }
 }
 
-void Parser::exp() {
+void Parser::exp(TokenType t) {
+  if (curtok.type == t) {
+    return;
+  }
   term();
   while(curtok.type == PLUS || curtok.type == MINUS) {
     if(curtok.type == PLUS) {
@@ -62,11 +65,25 @@ void Parser::term() {
   }
 }
 
+void Parser::error(std::string info) {
+  std::cout << "Error [line " << curtok.line << "]: " << info << std::endl;
+  exit(3);
+}
+
 void Parser::factor() {
   if(curtok.type == NUMBER) {
     std::string hl = curtok.start;
     int res = std::atoi(hl.substr(0, curtok.length).c_str());
     std::cout << "LOADING NUMBER " << res << std::endl;
     advance();
+  } else if(curtok.type == LEFT_PAREN) {
+    exp(RIGHT_PAREN);
+    advance();
+  } else if (curtok.type == ERROR) {
+    std::string hl = curtok.start;
+    error(hl.substr(0, curtok.length));
+
+  } else {
+    error("Invalid Expression");
   }
 }

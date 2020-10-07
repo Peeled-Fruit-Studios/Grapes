@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(Grapes VERSION 1.2)
+project(Grapes VERSION 1.3)
 
 option(BUILD_INSTALLER "Make Installer for Grapes" OFF)
 

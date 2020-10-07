@@ -19,7 +19,7 @@ int main() {
 
   Grapes::Scanner sc;
   sc.setup("test/Test.gs");
-
+  /*
   std::cout << "Testing Complete Scanner\n";
   std::list<Grapes::Token> gh;
   gh  = sc.ScanTokens();
@@ -35,7 +35,7 @@ int main() {
       std::string hl = item->start;
       std::cout << hl.substr(0, item->length) << " | " << item->line << std::endl;
     }
-  }
+  } */
 
   std::cout << "Testing Parser\n";
 

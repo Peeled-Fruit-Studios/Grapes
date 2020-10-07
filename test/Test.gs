@@ -1,1 +1,1 @@
-print 5 + 5 * 5;
+print "Yusuf is Cool

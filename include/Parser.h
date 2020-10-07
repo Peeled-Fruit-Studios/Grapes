@@ -10,9 +10,10 @@ namespace Grapes {
     Parser(std::string filename);
     void parse();
     private:
+    void error(std::string info);
     void advance();
     void statement();
-    void exp();
+    void exp(Grapes::TokenType t);
     void factor();
     void term();
     int offset;
