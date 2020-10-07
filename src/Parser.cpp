@@ -94,7 +94,6 @@ void Parser::factor() {
   } else if (curtok.type == ERROR) {
     std::string hl = curtok.start;
     error(hl.substr(0, curtok.length));
-
   } else if (curtok.type == LSTRING) {
     std::string hl = curtok.start;
     storeValue(Value(V_STRING, hl.substr(1, curtok.length - 2)));
