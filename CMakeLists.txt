@@ -19,6 +19,8 @@ configure_file(include/GrapesConf.h.in GrapesConf.h)
 
 target_include_directories(Grapes PUBLIC "${PROJECT_BINARY_DIR}/include")
 
+target_include_directories(Grapes PUBLIC "${PROJECT_BINARY_DIR}")
+
 target_include_directories(Grapes PUBLIC "${PROJECT_SOURCE_DIR}/svm/include")
 
 if(BUILD_INSTALLER)
