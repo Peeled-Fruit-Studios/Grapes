@@ -19,16 +19,7 @@ void preamble() {
   std::cout << "CPU Arch: " << CMAKE_SYSTEM_PROCESSOR << std::endl;
 }
 
-int main() {
-  preamble();
-/*
-  Grapes::Scanner sc;
-  sc.setup("test/Test.gs");
-<<<<<<< HEAD
-=======
-  /*
->>>>>>> 9075b5f3e5cd27b43911ef1b39f55ecfe505ad10
-  std::cout << "Testing Complete Scanner\n";
+/*std::cout << "Testing Complete Scanner\n";
   std::list<Grapes::Token> gh;
   gh  = sc.ScanTokens();
 
@@ -45,7 +36,10 @@ int main() {
     }
   } */
 
-  Grapes::Parser ps("test/Test.gs");
+int main() {
+  preamble();
+
+  Grapes::Parser ps("../../test/Test.gs");
 
   Grapes::Program pt = ps.parse();
 

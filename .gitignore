@@ -4,4 +4,6 @@ Grapes
 
 libsvm.so
 
+cmake-build-debug
+
 pft
