@@ -36,10 +36,10 @@ void preamble() {
     }
   } */
 
-int main() {
+int main(int argc, char* argv[]) {
   preamble();
 
-  Grapes::Parser ps("../../test/Test.gs");
+  Grapes::Parser ps(argv[1]);
 
   Grapes::Program pt = ps.parse();
 
