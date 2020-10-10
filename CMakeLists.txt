@@ -8,6 +8,10 @@ option(DYNA_SVM "Make the SVM a Dynamic Library" ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 
+if(MSVC)
+  set(CMAKE_CXX_FLAGS "/MT")
+endif()
+
 add_subdirectory(src)
 add_subdirectory(include)
 add_subdirectory(svm)
