@@ -1,5 +1,7 @@
 #include <iostream>
+#include <cstring>
 #include "GrapesConf.h"
+#include "ExecutionEngine.h"
 #include "Program.h"
 #include "Value.h"
 #include "Parser.h"
@@ -37,12 +39,25 @@ void preamble() {
   } */
 
 int main(int argc, char* argv[]) {
-  preamble();
+
+  if(argc != 2) {
+      std::cout << "Error: Incorrect Number of Arguments Specified\n";
+      exit(3);
+  }
+
+  if (memcmp(argv[1], "about", 5) == 0) {
+      preamble();
+      exit(0);
+  }
 
   Grapes::Parser ps(argv[1]);
 
   Grapes::Program pt = ps.parse();
 
   pt.print();
+
+  Grapes::ExecutionEngine rt(pt);
+
+  rt.run();
   
 }
