@@ -20,10 +20,13 @@ void preamble() {
 }
 
 int main() {
-  preamble();
 /*
   Grapes::Scanner sc;
   sc.setup("test/Test.gs");
+<<<<<<< HEAD
+=======
+  /*
+>>>>>>> 9075b5f3e5cd27b43911ef1b39f55ecfe505ad10
   std::cout << "Testing Complete Scanner\n";
   std::list<Grapes::Token> gh;
   gh  = sc.ScanTokens();
