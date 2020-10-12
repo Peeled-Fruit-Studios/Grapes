@@ -5,6 +5,7 @@
 #define EXECUTIONENGINE_H
 
 #include "Value.h"
+#include "Program.h"
 #include <stack>
 
 namespace Grapes {

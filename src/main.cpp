@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
       exit(0);
   }
 
-  Grapes::Parser ps(s);
+  Grapes::Parser ps(argv[1]);
 
   Grapes::Program pt = ps.parse();
 
