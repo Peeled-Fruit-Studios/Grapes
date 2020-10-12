@@ -1,5 +1,7 @@
 #include <iostream>
+#include <cstring>
 #include "GrapesConf.h"
+#include "ExecutionEngine.h"
 #include "Program.h"
 #include "Value.h"
 #include "Parser.h"
@@ -19,14 +21,9 @@ void preamble() {
   std::cout << "CPU Arch: " << CMAKE_SYSTEM_PROCESSOR << std::endl;
 }
 
-int main() {
 /*
   Grapes::Scanner sc;
   sc.setup("test/Test.gs");
-<<<<<<< HEAD
-=======
-  /*
->>>>>>> 9075b5f3e5cd27b43911ef1b39f55ecfe505ad10
   std::cout << "Testing Complete Scanner\n";
   std::list<Grapes::Token> gh;
   gh  = sc.ScanTokens();
@@ -44,10 +41,22 @@ int main() {
     }
   } */
 
-  Grapes::Parser ps("test/Test.gs");
+int main(int argc, char* argv[]) {
+  if(argc != 2) {
+      std::cout << "Error: Incorrect Number of Arguments Specified\n";
+      exit(3);
+  }
+  if (memcmp(argv[1], "about", 5) == 0) {
+      preamble();
+      exit(0);
+  }
+
+  Grapes::Parser ps(s);
 
   Grapes::Program pt = ps.parse();
 
-  pt.print();
+  Grapes::ExecutionEngine rt(pt);
+
+  rt.run();
   
 }

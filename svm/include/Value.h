@@ -14,8 +14,13 @@ namespace Grapes {
     public:
     int type;
     Value(int typ, std::any gh) : dat(gh), type(typ){}
+    Value() {}
     void print();
+    Value operator+(Value right);
     std::any getRaw();
+    void setRaw(std::any mf) {
+        dat = std::move(mf);
+    }
     private:
     std::any dat;
   };
