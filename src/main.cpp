@@ -54,8 +54,6 @@ int main(int argc, char* argv[]) {
 
   Grapes::Program pt = ps.parse();
 
-  pt.print();
-
   Grapes::ExecutionEngine rt(pt);
 
   rt.run();

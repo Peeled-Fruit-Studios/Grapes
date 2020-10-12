@@ -6,4 +6,6 @@ libsvm.so
 
 cmake-build-debug
 
+cmake-build-release
+
 pft
