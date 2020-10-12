@@ -1,21 +1,26 @@
+//
+// Created by Uiop on 10/10/2020.
+//
 #ifndef EXECUTIONENGINE_H
 #define EXECUTIONENGINE_H
 
-#include "Program.h"
+#include "Value.h"
 #include <stack>
 
 namespace Grapes {
-	class ExecutionEngine {
+    class ExecutionEngine {
     public:
-    ExecutionEngine(Grapes::Program tl) : ip(tl), counter(0), vcon(0) {}
-    void run();
+        ExecutionEngine(Grapes::Program tp);
+        void run();
     private:
-    int counter;
-    int getInst();
-    int vcon;
-    Value getVal();
-    std::stack<Value> ms;
-    Grapes::Program ip;
-	};
+        std::stack<Value> ms;
+        Grapes::Program ip;
+        int counter;
+        int vcon;
+        Value getConst();
+        int getInst();
+    };
 }
-#endif
+
+
+#endif //EXECUTIONENGINE_H

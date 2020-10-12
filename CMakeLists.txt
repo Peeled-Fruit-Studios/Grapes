@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(Grapes VERSION 1.4)
+project(Grapes VERSION 1.5)
 
 option(BUILD_INSTALLER "Make Installer for Grapes" OFF)
 option(DYNA_SVM "Make the SVM a Dynamic Library" ON)
