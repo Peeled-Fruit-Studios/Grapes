@@ -1,2 +1,2 @@
 tasks:
-  - init: mkdir buildd && cd build && cmake -G Ninja ..
+  - init: mkdir build && cd build && cmake -G Ninja ..
