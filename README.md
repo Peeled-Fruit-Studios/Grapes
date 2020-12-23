@@ -1,5 +1,7 @@
 # Grapes
 
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Peeled-Fruit-Studios/Grapes)
+
 The Grapes Programming Language is a Easy to Learn, Interpreted and Dynamically typed programming language.
 
 *Note: This Programming language is in the Very, Very Early Stages and is Under Heavy construction*
